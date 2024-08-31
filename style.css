@@ -1,0 +1,440 @@
+:root {
+  --ff-primary:"Roboto", sans-serif;
+  --ff-secondary:"Rajdhani", sans-serif;
+  --fw-regular:400;
+  --fw-medium:500;
+  --fw-semi-bold:600;
+  --fw-bold:700;
+  --clr-black:hsl(0, 0%, 0%);
+  --clr-light-black:hsl(240,3.7%, 10.59%);
+  --clr-gray:hsl(165,2%,42%);
+  --clr-white:hsl(240,3%,94%);
+  --clr-green:hsl(87, 96%, 78%);
+  --size-01: 0.063rem;
+  --size-02: 0.125rem;
+  --size-03: 0.188rem;
+  --size-04: 0.25rem;
+  --size-05: 0.313rem;
+  --size-06: 0.375rem;
+  --size-07: 0.438rem;
+  --size-08: 0.5rem;
+  --size-09: 0.563rem;
+  --size-10: 0.625rem;
+  --size-11: 0.688rem;
+  --size-12: 0.75rem;
+  --size-13: 0.813rem;
+  --size-14: 0.875rem;
+  --size-15: 0.938rem;
+  --size-16: 1.0rem;
+  --size-17: 1.063rem;
+  --size-18: 1.125rem;
+  --size-19: 1.188rem;
+  --size-20: 1.25rem;
+  --size-21: 1.313rem;
+  --size-22: 1.375rem;
+  --size-23: 1.438rem;
+  --size-24: 1.5rem;
+  --size-25: 1.563rem;
+  --size-26: 1.625rem;
+  --size-27: 1.688rem;
+  --size-28: 1.75rem;
+  --size-29: 1.813rem;
+  --size-30: 1.875rem;
+  --size-31: 1.938rem;
+  --size-32: 2.0rem;
+  --size-40:2.5rem;
+  --size-45:2.813rem;
+  --size-48:3rem;
+  --size-56:3.5rem;
+  --size-80:5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'], li {
+  list-style: none;
+}
+
+/* Set core body defaults */
+html, body {
+  height: 100%;
+}
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+button, input {
+  border: none;
+}
+
+body {
+  background: var(--clr-black); 
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  color: var(--clr-white);
+}
+
+.container {
+  max-width: 1110px;
+  margin-inline: auto;
+  width: calc(100% - var(--size-40));
+}
+.text-green {
+  color:var(--clr-green);
+}
+.text-gray {
+  color: var(--clr-gray);
+}
+.text-black {
+  color: var(--clr-light-black);
+}
+.grid {
+  display: grid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-semi-bold);
+}
+
+h1, .card-section-01 {
+  font-size: calc(var(--size-16)*3);
+}
+
+h2 {
+  font-size: calc(var(--size-16)*1.5);
+}
+.text-center {
+  text-align: center;
+}
+.my-48 {
+  margin-block: var(--size-48);
+}
+.mb-48 {
+  margin-bottom: var(--size-48);
+}
+.products {
+  display: grid;
+  gap: var(--size-16);
+}
+
+.products .card {
+  background: var(--clr-light-black);
+  padding: var(--size-16);
+}
+
+.products .card .card-split {
+  display: flex;
+  align-items: center;
+}
+.card-section-01 i {
+  transition: transform 0.3s ease; 
+}
+.card:hover i {
+  transform: scale(0.8); /* Scales the icon down to 80% of its size */
+}
+.card-section-02 {
+  padding-inline: var(--size-16);
+}
+
+.valuation {
+  display: grid;
+  gap: var(--size-16);
+  margin-block: var(--size-16);
+}
+.valuation .card {
+  background: var(--clr-light-black);
+  padding: var(--size-16);
+  position: relative;
+}
+
+.valuation h3 {
+  font-size: calc(var(--size-16)*1.2);
+}
+
+.valuation strong {
+  font-size: calc(var(--size-16)*3.5);
+  -webkit-text-stroke: 1px #fff;
+  font-weight: var(--fw-semi-bold);
+}
+.valuation .card-description {
+  text-align: center;
+}
+
+.valuation .card .badge {
+  position: absolute;
+  background: var(--clr-green);
+  right: var(--size-20);
+  top: 0;
+  padding: var(--size-10);
+  
+}
+.badge svg {
+  transition: transform 0.6s; /* Duration of the flip effect */
+    transform-style: preserve-3d;
+}
+.card:hover .badge svg{
+  transform: rotateY(180deg); 
+}
+
+.card {
+  border-radius: var(--size-03);
+}
+
+.competitive-advantage ul, .team {
+  display: grid;
+  gap: var(--size-16);
+
+}
+.competitive-advantage img {
+  border-radius: var(--size-03);
+}
+.image-item {
+  position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-item img {
+  width: 100%;
+    height: auto;
+    transition: transform 0.9s ease;
+    transform: scale(1.05); /* Initial slight zoom */
+}
+
+.image-item:hover img {
+  transform: scale(1);
+}
+
+.overlay {
+  position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(206, 253, 145, 0.8), rgba(206, 253, 145, 0));
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: perspective(400px) rotateX(90deg) scaleY(0.5);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.image-item:hover .overlay {
+  opacity: 1;
+    transform: perspective(400px) rotateX(0deg) scaleY(1);
+}
+
+.text {
+  color:var(--clr-light-black);
+    font-size: var(--size-18);
+    font-weight: var(--fw-semi-bold);
+}
+
+.team .card {
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.team .card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.team .card-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  transition: height 0.4s ease, opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.team .card:hover img {
+  transform: scale(1);
+}
+
+.team .card:hover .card-overlay {
+  height: 100%;
+  opacity: 0;
+}
+
+.team .card-description {
+  background:var(--clr-light-black);
+  text-align: center;
+  padding-block-start: var(--size-20);
+  padding-block-end: var(--size-10);
+  margin-top: -10px;
+  border-radius: 5px;
+  z-index: -1;
+  position: relative;
+}
+
+.team .card .name {
+  font-size:var(--size-16);
+  color: var(--clr-white);
+}
+
+.team .card .other-detail {
+  font-size: var(--size-16);
+  color: var(--clr-white);
+}
+.other-detail .team-img {
+  background: var(--clr-black);
+  padding: var(--size-10);
+  text-align: -webkit-center;
+  height: 50px;
+  margin-block: var(--size-08);
+}
+.other-detail .team-img img {
+  width: 70%;
+}
+.logo {
+  align-self: center;
+}
+.logo img {
+  width: 250px;
+  aspect-ratio: 1/ 0.4;
+}
+.valuation .logo {
+  grid-area: logo;
+}
+.valuation .valuationC {
+  grid-area: valuationC;
+}
+.valuation .valuationE {
+  grid-area: valuationE;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .products, .valuation, .competitive-advantage ul, .team {
+    grid-template-columns: 1fr;
+  }
+  .valuation {
+    grid-template-rows: auto; 
+    grid-template-areas: 
+                          'valuationC'
+                          'valuationE'
+                          'logo' ;
+  }
+  .valuation .logo {
+    justify-self: center;
+    margin-block: var(--size-30);
+  }
+  .card-section-01 {
+    justify-self: center;
+  }
+  .card-split {
+    justify-content: flex-start;
+  }
+  .team-img {display: none;}
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .products, .valuation, .competitive-advantage ul, .team {
+    grid-template-columns: 1fr ;
+  }
+  .card-split {
+    justify-content: flex-start;
+  }
+  .team-img {display: none;}
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .products, .competitive-advantage ul, .team {
+    grid-template-columns: 1fr 1fr;
+  }
+  .valuation{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto; 
+    grid-template-areas: 
+                          'logo valuationC valuationE';
+  }
+  .valuation .logo {
+    justify-self: start;
+    margin-block: auto;
+  }
+  .card-split {
+    justify-content: center;
+  }
+  .other-detail .team-img {display: block; height: auto;}
+ }
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  .products, .competitive-advantage ul, .team{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) { 
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .competitive-advantage ul, .team {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .team {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+ }
