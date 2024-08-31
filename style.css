@@ -361,6 +361,22 @@ h2 {
   grid-area: valuationE;
 }
 /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+  
+  .valuation {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
+    grid-template-areas: 
+                          'valuationC'
+                          'valuationE'
+                          'logo' ;
+  }
+  .valuation .logo {
+    justify-self: center;
+    margin-block: var(--size-30);
+  }
+  .team-img {display: none;}
+}
 @media (min-width: 576px) { 
   .products, .valuation, .competitive-advantage ul, .team {
     grid-template-columns: 1fr;
