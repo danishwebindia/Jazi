@@ -343,9 +343,7 @@ h2 {
   height: 50px;
   margin-block: var(--size-08);
 }
-.other-detail .team-img img {
-  width: 70%;
-}
+
 .logo {
   align-self: center;
 }
